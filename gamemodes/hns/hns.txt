@@ -1,0 +1,12 @@
+"hns"
+{
+	"base"		"base"
+	"title"		"Hide N Seek B-Hop"
+	"maps"		"^cs_"
+	"menusystem"	"1"
+
+	"settings"
+	{
+		//Derp
+	}
+}

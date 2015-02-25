@@ -1,0 +1,5 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/blocks/bl_trampoline"	
+	"$translucent" 1
+}

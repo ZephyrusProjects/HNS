@@ -1,0 +1,5 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/blocks/bl_barrier"	
+	"$translucent" 1
+}
