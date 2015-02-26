@@ -142,6 +142,7 @@ function SWEP:DamagePlayer(ent)
 	dmg:SetDamagePosition(self.Owner:GetPos())
 	dmg:SetDamageType(DMG_SLASH)
 	
+
 	if usedPrimary then 
 		dmg:SetDamage(self.PrimaryDamage)
 	else
@@ -150,29 +151,18 @@ function SWEP:DamagePlayer(ent)
 
 	--The engine is pushing players when they take damage. We handle damaging players
 	--differently to avoid this.
-	if ent:Team() != self.Owner:Team() then
-		if !ent:IsBot() then
+	if SERVER then	
+		if ent:Team() != self.Owner:Team() then
+		
 			ent:SetArmor( ent:Armor() - ( dmg:GetDamage() / math.random(2,3)) )
+			ent:SetHealth(ent:Health() - dmg:GetDamage())
+			
+			dmg:SetDamage(1)			--Can't use 0 as a value or it won't call the HUD
+			ent:TakeDamageInfo( dmg )	--We do this so it still shows the default HL2 take damage HUD
+			
 		end
-		
-		ent:SetHealth(ent:Health() - dmg:GetDamage())
-		
-		if ent:Health() <= 0 then
-			ent:TakeDamageInfo( dmg )	--So it kills the player and shows the death notification 
-		end
-		
-		print(dmg:GetAttacker())
-		print(dmg:GetInflictor())
-		print(dmg:GetDamageForce())
-		print(dmg:GetDamagePosition())
-		print(dmg:GetDamageType())
-		print(dmg:GetDamage())
-		
-		
-		dmg:SetDamage(0)		--We do this so it still shows the HUD you see when you take damage
-		ent:TakeDamageInfo( dmg )		
-
 	end
+
 
 end
 

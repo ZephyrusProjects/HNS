@@ -26,37 +26,32 @@ function ENT:DamagePlayers()
 			local tracedata = {}
 			tracedata.start = self:GetPos() + Vector(0,0,8)		--Make sure the grenade is not in the ground
 			tracedata.endpos = v:GetPos() + Vector(0,0,36)		--waist level is somewhere around here. 
-			tracedata.filter = {self, v}
+			tracedata.filter = {self}
 			local trace = util.TraceLine(tracedata)
 			
 			
 			local maxDistance = 256
 			local minDistance = 75
 			local distance = math.Clamp(trace.StartPos:Distance(trace.HitPos), minDistance, maxDistance)
-
+			
 			if distance >= maxDistance then return end
 	
 			local damage  = (distance / minDistance)
-				  damage = math.random(50, 60) / damage
-
-			if !trace.Hit then
-				if v == self:GetOwner() or v:Team() != self:GetOwner():Team() then
-					if !v:IsBot() then
+				  damage = math.random(45, 55) / damage
+				
+				
+			if SERVER then	  
+				if trace.Hit and trace.Entity:IsPlayer() then
+					if v == self:GetOwner() or v:Team() != self:GetOwner():Team() then
 						v:SetArmor( v:Armor() - ( damage / math.random(2,3)) )
+						v:SetHealth(v:Health() - damage)
+							
+						dmg:SetDamage(1)			--Can't use 0 as a value or it won't call the HUD
+						v:TakeDamageInfo( dmg )		--We do this so it still shows the default HL2 take damage HUD
 					end
-					
-					v:SetHealth(v:Health() - damage) 
-					
-					if v:Health() <= 0 then
-						v:TakeDamageInfo( dmg )
-					end
-					
-					dmg:SetDamage(0)		--We do this so it still shows the HUD you see when you take damage
-					v:TakeDamageInfo( dmg )
-					
-				end	
+				end
 			end
-
+			
 		end
 		
 end
@@ -109,34 +104,3 @@ function ENT:Explode(tr)
    
 end
 
-
-/*
-		for k, v in pairs(player.GetAll()) do
-		
-			local tracedata = {}
-			tracedata.start = self:GetPos() + Vector(0,0,8)		--Make sure the grenade is not in the ground
-			tracedata.endpos = v:GetPos() + Vector(0,0,36)		--waist level is somewhere around here. 
-			tracedata.filter = {self, v}
-			local trace = util.TraceLine(tracedata)
-			
-			
-			local maxDistance = 256
-			local minDistance = 75
-			local distance = math.Clamp(trace.StartPos:Distance(trace.HitPos), minDistance, maxDistance)
-
-			if distance >= maxDistance then return end
-	
-			local damage  = (distance / minDistance)
-				  damage = 60 / damage
-
-			if !trace.Hit then
-			--	if v == self:GetOwner() or v:Team() != self:GetOwner():Team() then
-					v:ChatPrint(damage)
-				--	v:SetHealth(v:Health() - damage) 
-					if v:Health() <= 0 then
-						v:Kill()
-					end
-			--	end	
-			end
-
-		end
