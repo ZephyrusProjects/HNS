@@ -161,8 +161,16 @@ function SWEP:DamagePlayer(ent)
 			ent:TakeDamageInfo( dmg )	--So it kills the player and shows the death notification 
 		end
 		
-	--	dmg:SetDamage(0)		--We do this so it still shows the HUD you see when you take damage
-	--  ent:TakeDamageInfo( dmg )		
+		print(dmg:GetAttacker())
+		print(dmg:GetInflictor())
+		print(dmg:GetDamageForce())
+		print(dmg:GetDamagePosition())
+		print(dmg:GetDamageType())
+		print(dmg:GetDamage())
+		
+		
+		dmg:SetDamage(0)		--We do this so it still shows the HUD you see when you take damage
+		ent:TakeDamageInfo( dmg )		
 
 	end
 
