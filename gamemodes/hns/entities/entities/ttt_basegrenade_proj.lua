@@ -38,6 +38,7 @@ function InveseVector(vector)
 	return vector
 end
 
+
 function ENT:SetLaserDirection(data, phys)
 
 	--These vectors are used to draw a straight line in every direction
@@ -87,7 +88,7 @@ function ENT:PhysicsCollide(data, phys)
 	local spos = self:GetPos()
 	local tr = util.TraceLine({start=spos, endpos=spos + Vector(0,0,-32), mask=MASK_SHOT_HULL, filter=self.thrower})
 	
-	if self:GetDetType() == 2 then		--impact
+	if self:GetDetType() == 2 then		--Impact
 		if EntHit:IsWorld() then
 			self:Explode(tr)
 		end
@@ -100,7 +101,7 @@ function ENT:PhysicsCollide(data, phys)
 				phys:EnableMotion( false )	
 					self:SetLaserDirection(data, phys)
 				timer.Simple(1, function() 
-					self:StartUp()		--Draw the laser
+					self:DrawLaser()		--Draw the laser
 				end)
 				self:EmitSound( "hns/mine_combined.wav", 360, 100)
 
@@ -109,8 +110,8 @@ function ENT:PhysicsCollide(data, phys)
 	end
 		
 		
-	if (self:GetDetType() == 4) then      --proximity
-		if tr.Hit and tr.HitWorld then
+	if (self:GetDetType() == 4) then      --Proximity
+		if EntHit:IsWorld() and tr.HitWorld then
 			if IsValid(phys) then
 				phys:EnableMotion( false )
 				self:EmitSound( "hns/mine_deploy.wav", 360, 100)		
@@ -139,7 +140,7 @@ end
 
 
 
-function ENT:StartUp()
+function ENT:DrawLaser()
 	
 	local trace = {}
 	trace.start = self:GetPos()
@@ -187,24 +188,27 @@ if SERVER then
 		  end
 	   end
 
+
 		
 		if self:GetNWBool("ActivateProximity") then		--proximity
 			local spos = self:GetPos()
 			local tr = util.TraceLine({start=spos, endpos=spos + Vector(0,0,-32), mask=MASK_SHOT_HULL, filter=self.thrower})	
 			local radius = 160
 
-			local entList = ents.FindInSphere( self:GetPos(), radius )
+			local entList = ents.FindInSphere( spos, radius )
 			
 			for k, v in pairs(entList) do
 				if (v:IsPlayer() && v != self.Owner && v:Team() != self.Owner:Team()) then
 					self:EmitSound("weapons/grenade/tick1.wav", 360, 100)
 					self:EmitSound("weapons/grenade/tick1.wav", 360, 100)
 					self:EmitSound("weapons/grenade/tick1.wav", 360, 100)
+					self:SetNWBool("ActivateProximity", false)
 					self:Explode(tr)
 					break
 				end
 			end
 		end
+		
 		
 	end
 
