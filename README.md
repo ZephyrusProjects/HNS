@@ -7,7 +7,7 @@ Merge all pre existing files/folders when prompted.
 
 
 #### Server Config Settings:  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__Round Time:__ How long the round time is in seconds.  
+     __Round Time:__ How long the round time is in seconds.  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;("*hns_roundtime_seconds*") - Default: 180 
    
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__Post Round Time:__ How long the post round phase is in seconds.  
@@ -72,6 +72,7 @@ Merge all pre existing files/folders when prompted.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;("*CreateNewTab*") - Realm: Client   
    
 
+   
 ---------------------
 ---------------------   
 #### Hook Examples:
@@ -106,4 +107,8 @@ local function AddTab_Example()
 end
 hook.Add("CreateNewTab", "AddTab_Example", AddTab_Example)
 ```
+
+
+---------------------
+---------------------   
 
