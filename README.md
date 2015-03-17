@@ -1,5 +1,5 @@
-# Hide N Seek B-Hop
-##### Created by: Swifty
+# Hide N Seek B-Hop		######Created by Swifty
+
 
 
 A jumping based game mode for Garry's mod.
