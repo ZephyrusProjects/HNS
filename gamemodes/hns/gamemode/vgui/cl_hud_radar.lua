@@ -23,7 +23,7 @@ local radar = surface.GetTextureID ("hns/cstrikeHUD/radar")
 local function HUD_Radar()
 
 	if !LocalPlayer():Alive() then return end
-	if ply:Team() == TEAM_BUILDER then return end
+	if LocalPlayer():Team() == TEAM_BUILDER then return end
 	if GetConVarNumber("hns_settings_radar") != 1 then return end
 	
 	local radar_scale = GetConVarNumber("hns_settings_radarscale")

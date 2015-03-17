@@ -16,7 +16,7 @@ local function HUD_Velocity()
 
 	if GetConVarNumber("hns_settings_velocity") != 1 then return end
 	if !LocalPlayer():Alive() then return end
-	if ply:Team() == TEAM_BUILDER then return end
+	if LocalPlayer():Team() == TEAM_BUILDER then return end
 	if !isTopMost then return end
 	
 	local txtColorBG = Color(0,0,0,100)
