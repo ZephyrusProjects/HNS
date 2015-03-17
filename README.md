@@ -47,29 +47,29 @@ Merge all pre existing files/folders when prompted.
 ---------------------
 ---------------------   
 #### Hooks:
-__Pre Round:__ Called when the round switches to the pre round phase.   
-("*PreRoundPhase*") - Realm: Shared
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__Pre Round:__ Called when the round switches to the pre round phase.   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;("*PreRoundPhase*") - Realm: Shared
 
-__Active Round:__ Called when the round switches to the active round phase.   
-("*ActiveRoundPhase*") - Realm: Shared
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__Active Round:__ Called when the round switches to the active round phase.   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;("*ActiveRoundPhase*") - Realm: Shared
 
-__Post Round:__ Called when the round switches to the post round phase.   
-("*PostRoundPhase*") - Realm: Shared
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__Post Round:__ Called when the round switches to the post round phase.   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;("*PostRoundPhase*") - Realm: Shared
 
-__Round Waiting:__ Called when the round switches to the waiting phase.   
-("*WaitingPhase*") - Realm: Shared
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__Round Waiting:__ Called when the round switches to the waiting phase.   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;("*WaitingPhase*") - Realm: Shared
 
-__Hiders Win:__ Called when the hiders win the round.   
-("*HidersWin*") - Realm: Shared
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__Hiders Win:__ Called when the hiders win the round.   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;("*HidersWin*") - Realm: Shared
 
-__Seekers Win:__ Called when the seekers win the round.   
-("*SeekersWin*") - Realm: Shared
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__Seekers Win:__ Called when the seekers win the round.   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;("*SeekersWin*") - Realm: Shared
 
-__Swap Teams:__ Called when Hiders win 3 rounds in a row.   
-("*SwapTeams*") - Realm: Shared
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__Swap Teams:__ Called when Hiders win 3 rounds in a row.   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;("*SwapTeams*") - Realm: Shared
 
-__Create Menu Tab:__ Adds a new tab into the F1 menu.   
-("*CreateNewTab*") - Realm: Client   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__Create Menu Tab:__ Adds a new tab into the F1 menu.   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;("*CreateNewTab*") - Realm: Client   
    
 
 ---------------------
