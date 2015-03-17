@@ -44,12 +44,15 @@ function AddBlockIcon(blockName, blockClass)		--Creates the icon for each block
 	
 	BlockModelIcon.DoClick = function()
 		PreviouslySelectBlockClass = blp_BlockSettings.Type		--Store this for later
-	
-		PrevIconLabel:SetText(CurrentIconLabel:GetText()) 
-		PrevIconLabel:SizeToContents()
-		PrevIconLabel:SetPos(GetTxtOffset( string.len(PrevIconLabel:GetText())) , 5) 
-		PrevBlockModelIcon.Entity:SetMaterial("models/blocks/".. PreviouslySelectBlockClass)
-		 
+		
+		--Prevents the PrevBlockModel from changing if we selected the same block twice
+		if CurrentIconLabel:GetText() != blockName then 
+			PrevIconLabel:SetText(CurrentIconLabel:GetText()) 
+			PrevIconLabel:SizeToContents()
+			PrevIconLabel:SetPos(GetTxtOffset( string.len(PrevIconLabel:GetText())) , 5) 
+			PrevBlockModelIcon.Entity:SetMaterial("models/blocks/".. PreviouslySelectBlockClass)
+		end
+		
 		CurrentIconLabel:SetText(blockName)
 		CurrentIconLabel:SizeToContents()
 		CurrentIconLabel:SetPos(GetTxtOffset( string.len(blockName)), 5)
