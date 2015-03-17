@@ -6,4 +6,4 @@ To install the game mode on your server simply drag and drop all files/folders i
 Merge all pre existing files/folders when prompted. 
 
 #### Server Config Settings:
-######		Rounds:
+######    Rounds:
