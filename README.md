@@ -45,8 +45,8 @@ __Power Up Length:__ How long power ups last in seconds.
 
 
 
-### Hooks:
-__Pre Round:__ Called when the round switches to pre round.   
+#### Hooks:
+__Pre Round:__ Called when the round switches to the pre round phase.   
 ("*PreRoundPhase*") - Realm: Shared
 
 __Active Round:__ Called when the round switches to the active round phase.   
@@ -69,4 +69,38 @@ __Swap Teams:__ Called when Hiders win 3 rounds in a row.
 
 __Create Menu Tab:__ Adds a new tab into the F1 menu.   
 ("*CreateNewTab*") - Realm: Client
+
+
+#### Hook Examples:
+Most of our hooks can be used client or server side. In this example will be doing a client side
+chat print. The majority of the hooks can be used just like in this: 
+```
+local function PreRound_HookExample()
+	LocalPlayer():ChatPrint("The pre round phase has just started!")
+end
+hook.Add("PreRoundPhase", "PreRound_HookExample", PreRound_HookExample)
+```
+
+
+In this example we will be adding a new tab to the F1 menu:
+```
+local function AddTab_Example()
+
+	local example_Panel = vgui.Create("DPanel")
+	example_Panel:SetPos(5,5)
+	example_Panel:SetBackgroundColor(panel_bgColor)
+	
+	local chckbox_showFPS = vgui.Create("DCheckBoxLabel", example_Panel)
+	chckbox_showFPS:Dock(TOP)
+	chckbox_showFPS:DockMargin(10,10,0,0)
+	chckbox_showFPS:SetValue(0)
+	chckbox_showFPS:SetText("Show FPS")
+	chckbox_showFPS:SetConVar("cl_showfps")
+	chckbox_showFPS:SizeToContents()
+
+	settings_Tabs:AddSheet( "Example", example_Panel, "materials/icon16/heart.png", false, false, "Example" )
+
+end
+hook.Add("CreateNewTab", "AddTab_Example", AddTab_Example)
+```
 
