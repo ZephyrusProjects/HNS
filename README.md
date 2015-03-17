@@ -7,7 +7,6 @@ Merge all pre existing files/folders when prompted.
 
 
 #### Server Config Settings:
-
 __Round Time:__ How long the round time is in seconds.  
 ("*hns_roundtime_seconds*") - Default: 180 
    
@@ -43,3 +42,31 @@ __AFK Round Limit:__ How many rounds before you get flagged as AFK.
    
 __Power Up Length:__ How long power ups last in seconds.   
 ("*hns_poweruplength_seconds*") - Default: 20
+
+
+
+### Hooks:
+__Pre Round:__ Called when the round switches to pre round.   
+("*PreRoundPhase*") - Realm: Shared
+
+__Active Round:__ Called when the round switches to the active round phase.   
+("*ActiveRoundPhase*") - Realm: Shared
+
+__Post Round:__ Called when the round switches to the post round phase.   
+("*PostRoundPhase*") - Realm: Shared
+
+__Round Waiting:__ Called when the round switches to the waiting phase.   
+("*WaitingPhase*") - Realm: Shared
+
+__Hiders Win:__ Called when the hiders win the round.   
+("*HidersWin*") - Realm: Shared
+
+__Seekers Win:__ Called when the seekers win the round.   
+("*SeekersWin*") - Realm: Shared
+
+__Swap Teams:__ Called when Hiders win 3 rounds in a row.   
+("*SwapTeams*") - Realm: Shared
+
+__Create Menu Tab:__ Adds a new tab into the F1 menu.   
+("*CreateNewTab*") - Realm: Client
+
