@@ -1,4 +1,4 @@
-# HNS
-Hide n Seek B-Hop Gamemode
+# Hide n Seek B-Hop
+
 
 *This is a new test2222*
