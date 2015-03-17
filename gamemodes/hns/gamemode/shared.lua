@@ -1,6 +1,7 @@
 DeriveGamemode( "base" )
 
-GM.Name = "Hide N Seek B-Hop"
+GM.Version = " v2.0"
+GM.Name = "Hide N Seek B-Hop" .. GM.Version
 GM.Author = "swifty"
 GM.Email = "N/A"
 GM.Website = "N/A"
