@@ -41,8 +41,9 @@ __AFK Round Limit:__ How many rounds before you get flagged as AFK.
    
    
 __Power Up Length:__ How long power ups last in seconds.   
-("*hns_poweruplength_seconds*") - Default: 20
----------------------
+("*hns_poweruplength_seconds*") - Default: 20   
+
+
 ---------------------
 ---------------------   
 #### Hooks:
@@ -68,10 +69,11 @@ __Swap Teams:__ Called when Hiders win 3 rounds in a row.
 ("*SwapTeams*") - Realm: Shared
 
 __Create Menu Tab:__ Adds a new tab into the F1 menu.   
-("*CreateNewTab*") - Realm: Client
+("*CreateNewTab*") - Realm: Client   
    
-   
-   
+
+---------------------
+---------------------   
 #### Hook Examples:
 Most of our hooks can be used client or server side. In this example will be doing a client side
 chat print. The majority of the hooks can be used just like this: 
