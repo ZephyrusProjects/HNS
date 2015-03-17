@@ -42,8 +42,8 @@ __AFK Round Limit:__ How many rounds before you get flagged as AFK.
    
 __Power Up Length:__ How long power ups last in seconds.   
 ("*hns_poweruplength_seconds*") - Default: 20   
-
-
+   
+   
 ---------------------
 ---------------------   
 #### Hooks:
