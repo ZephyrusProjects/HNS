@@ -1,6 +1,39 @@
 --This is one of the first things I did for the GM, please forgive me for my sins :)
 
 
+
+--Custom DCombo Menu, to override the default one sorting alphabetically 
+local function CustomDComboMenu(pControlOpener, panel)
+
+	if ( pControlOpener ) then
+		if ( pControlOpener == panel.TextEntry ) then
+			return
+		end
+	end
+	
+	-- Don't do anything if there aren't any options..
+	if ( #panel.Choices == 0 ) then return end
+	
+	-- If the menu still exists and hasn't been deleted
+	-- then just close it and don't open a new one.
+	if ( IsValid( panel.Menu ) ) then
+		panel.Menu:Remove()
+		panel.Menu = nil
+	end
+	
+	panel.Menu = DermaMenu()
+	
+	for k, v in pairs( panel.Choices ) do
+		panel.Menu:AddOption( v, function() panel:ChooseOption( v, k ) end )
+	end
+	
+	local x, y = panel:LocalToScreen( 0, panel:GetTall() )
+	
+	panel.Menu:SetMinimumWidth( panel:GetWide() )
+	panel.Menu:Open( x, y, false, panel )
+	
+end
+
 -------------------------------
 -- 	  Block Options Menu     --
 -------------------------------
@@ -225,6 +258,7 @@ function BlockOptionsMenu()			--The block settings GUI off to the right
 		SnapAmount:AddChoice("64")	
 		SnapAmount:AddChoice("128")		
 		SnapAmount:ChooseOption("4")
+		SnapAmount.OpenMenu = function() CustomDComboMenu(pControlOpener,SnapAmount) end
 		SnapAmount.OnSelect = function( panel, index, value )
 			RunConsoleCommand("gm_snapgrid", value)
 		end
@@ -274,6 +308,7 @@ function BlockOptionsMenu()			--The block settings GUI off to the right
 		SelectBoxSize:AddChoice("Normal_Thin")	
 		SelectBoxSize:AddChoice("Large_Thin")	
 		SelectBoxSize:ChooseOption("Normal")
+		SelectBoxSize.OpenMenu = function() CustomDComboMenu(pControlOpener,SelectBoxSize) end
 		SelectBoxSize.OnSelect = function( panel, index, value )
 			blp_BlockSettings.blSize = value
 		end
