@@ -100,7 +100,7 @@ local function HUD_Health()
 
 	local ply = LocalPlayer()
 	if !IsValid(ply) or !ply:Alive() then return end	
-	if ply:Team() == 4 then return end		--Builder team
+	if ply:Team() == TEAM_BUILDER then return end
 	if GetConVarNumber("hns_settings_hlhud") != 0 then return end
 	
 	local healthTable = SplitString(ply:Health())		
@@ -127,7 +127,7 @@ local function HUD_Armor()
 
 	local ply = LocalPlayer()
 	if !IsValid(ply) or !ply:Alive() then return end	
-	if ply:Team() == 4 then return end		--Builder team
+	if ply:Team() == TEAM_BUILDER then return end
 	if GetConVarNumber("hns_settings_hlhud") != 0 then return end
 	
 	local armorPOS = ScrW() * 0.25 - 75
@@ -173,7 +173,7 @@ local function HUD_FlashLight()
 
 	local ply = LocalPlayer()
 	if !IsValid(ply) or !ply:Alive() then return end	
-	if ply:Team() == 4 then return end		--Builder team
+	if ply:Team() == TEAM_BUILDER then return end
 	
 	local iconWidth = 52 * scale
 	local iconHeight = 38 * scale
@@ -201,7 +201,7 @@ local function HUD_Clock()
 
 	local ply = LocalPlayer()
 	if !IsValid(ply) then return end	
-	if ply:Team() == 4 then return end		--Builder team
+	if ply:Team() == TEAM_BUILDER then return end
 	
 	local timeleft = GetGlobalVar( "hns_time_left" )  or 0
 	local formatTime = string.FormattedTime(timeleft)
@@ -286,7 +286,7 @@ local function HUD_Money()
 
 	local ply = LocalPlayer()
 	if !IsValid(ply) then return end	
-	if ply:Team() == 4 then return end		--Builder team
+	if ply:Team() == TEAM_BUILDER then return end
 
 	local money = ply:GetNetworkedFloat("money")
 	local moneyTable = SplitString(money)
