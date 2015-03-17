@@ -81,8 +81,8 @@ hook.Add("PreRoundPhase", "PreRound_HookExample", PreRound_HookExample)
 ```
 
 
-In this example we will be adding a new tab to the F1 menu:
-```
+###### In this example we will be adding a new tab to the F1 menu:
+```lua
 local function AddTab_Example()
 
 	local example_Panel = vgui.Create("DPanel")
