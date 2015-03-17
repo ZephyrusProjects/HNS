@@ -6,8 +6,8 @@ To install the game mode on your server simply drag and drop all files/folders i
 Merge all pre existing files/folders when prompted. 
 
 
-#### Server Config Settings:
-<strong>    </strong>__Round Time:__ How long the round time is in seconds.  
+#### Server Config Settings:  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__Round Time:__ How long the round time is in seconds.  
 ("*hns_roundtime_seconds*") - Default: 180 
    
 __Post Round Time:__ How long the post round phase is in seconds.  
