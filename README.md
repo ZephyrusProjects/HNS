@@ -7,8 +7,7 @@ Merge all pre existing files/folders when prompted.
 
 
 #### Server Config Settings:
-<strong>Just indent 4 spaces.</strong>
-__Round Time:__ How long the round time is in seconds.  
+<strong>		</strong>__Round Time:__ How long the round time is in seconds.  
 ("*hns_roundtime_seconds*") - Default: 180 
    
 __Post Round Time:__ How long the post round phase is in seconds.  
