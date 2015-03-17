@@ -3,7 +3,13 @@ A team based jumping game mode for Garry's mod. I hope you guys enjoy it!
 
 #### Installation Instructions:
 To install the game mode on your server simply drag and drop all files/folders in the __HNS-master__ folder to your servers root __/garrysmod__ directory. 
-Merge all pre existing files/folders when prompted. 
+Merge all pre existing files/folders when prompted.  
+
+#### Server Owners 
+  * Make sure your servers tick rate is __at least 66__. Tick rates below 66 cause bhops to be unresponsive.
+  * Do not worry about gravity, air acceleration, friction etc. The game mode takes care of it.
+  * Super-Admin's have access to the building team. Create a new group called 'builders' for group that can  
+    build with no administrative privileges .
 
 
 #### Server Config Settings:  
