@@ -1,5 +1,6 @@
-Alt-H1 # Hide N Seek B-Hop
-Alt-H1  Hide N Seek B-Hop
+# Hide N Seek B-Hop
+##### Created by: Swifty
+
 
 A jumping based game mode for Garry's mod.
 
