@@ -1,4 +1,5 @@
-Alt-# Hide N Seek B-Hop
+Alt-H1 # Hide N Seek B-Hop
+Alt-H1  Hide N Seek B-Hop
 
 A jumping based game mode for Garry's mod.
 
