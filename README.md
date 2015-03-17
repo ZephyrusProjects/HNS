@@ -2,11 +2,12 @@
 A team based jumping game mode for Garry's mod. I hope you guys enjoy it!
 
 #### Installation Instructions:
-   To install the game mode on your server simply drag and drop all files/folders in the __HNS-master__ folder to your servers root __/garrysmod__ directory. 
+To install the game mode on your server simply drag and drop all files/folders in the __HNS-master__ folder to your servers root __/garrysmod__ directory. 
 Merge all pre existing files/folders when prompted. 
 
 
 #### Server Config Settings:
+<strong>Just indent 4 spaces.</strong>
 __Round Time:__ How long the round time is in seconds.  
 ("*hns_roundtime_seconds*") - Default: 180 
    
