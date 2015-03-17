@@ -2,8 +2,8 @@ DeriveGamemode( "base" )
 
 GM.Version = " v2.0"
 GM.Name = "Hide N Seek B-Hop" .. GM.Version
-GM.Author = "swifty"
-GM.Email = "N/A"
+GM.Author = "Swifty"
+GM.Email = "ZephyrusProjects@gmail.com"
 GM.Website = "N/A"
 
 
