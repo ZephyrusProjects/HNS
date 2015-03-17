@@ -10,16 +10,16 @@ Merge all pre existing files/folders when prompted.
 ##### Rounds:
 
 
-Round Time: How long the round time is in seconds.
+__Round Time:__ How long the round time is in seconds.
 ("hns_roundtime_seconds") - Default: 180 
 
-Post Round Time: How long the post round phase is in seconds.
+__Post Round__ Time: How long the post round phase is in seconds.
 ("hns_postround_seconds") - Default: 8
 
-Pre Round Time: How long the pre round phase is in seconds.
+__Pre Round Time:__ How long the pre round phase is in seconds.
 ("hns_preround_seconds") - Default: 16
 
-Round Limit: How many rounds before we switch maps.
+__Round Limit:__ How many rounds before we switch maps.
 ("hns_round_limit") - Default: 10
 
 
