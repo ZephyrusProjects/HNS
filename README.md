@@ -9,9 +9,11 @@ Merge all pre existing files/folders when prompted.
   * Make sure your servers tick rate is __at least 66__. Tick rates below 66 cause bhops to be unresponsive.
   * Do not worry about gravity, air acceleration, friction etc. The game mode takes care of it.
   * Super-Admin's have access to the building team. Create a new group called 'builders' for group that can  
-    build with no administrative privileges .
+    build with no administrative privileges.
 
-
+	
+---------------------
+---------------------   
 #### Server Config Settings:  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__Round Time:__ How long the round is in seconds.  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;("*hns_roundtime_seconds*") - Default: 180 
