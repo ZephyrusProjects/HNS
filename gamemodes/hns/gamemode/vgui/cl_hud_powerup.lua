@@ -5,7 +5,7 @@
 -- 	   PowerUpNotify       --
 -----------------------------
 function PowerUpNotify(msg)
-
+			
 	local duration = CurTime() + GetGlobalVar("hns_poweruplength_seconds")
 	local alpha = 150
 	
